@@ -1,0 +1,7 @@
+.astro-code {
+  @apply rounded-none;
+}
+
+code {
+  @apply !text-red-600;
+}
