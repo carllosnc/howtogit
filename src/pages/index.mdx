@@ -1,0 +1,81 @@
+---
+layout: ../layout/Layout.astro
+---
+
+<h1 class="bg-red-500 text-[20px] -rotate-6 px-3 py-2 gap-2 items-center text-white text inline-flex">How to GIT <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-git-graph"><circle cx="5" cy="6" r="3"/><path d="M5 9v6"/><circle cx="5" cy="18" r="3"/><path d="M12 3v18"/><circle cx="19" cy="6" r="3"/><path d="M16 15.7A9 9 0 0 0 19 9"/></svg></h1>
+
+A compilation of common problems/solutions that you face when working with git.
+
+## Resources
+To learn more about git, check out the following resources:
+- [Git: Oficial Docs](https://git-scm.com/doc)
+
+## Summary
+
+- [How to back the last commit?](#how-to-back-the-last-commit)
+- [How to restore files and delete untracked files](#how-to-restore-files-and-delete-untracked-files)
+- [How to setup email, name and editor](#how-to-setup-email-name-and-editor)
+- [How to show, create, renaming and deleting branches](#how-to-show-create-renaming-and-deleting-branches)
+- [How to rename the last commit](#how-to-rename-the-last-commit)
+
+## How to back the last commit
+
+`--hard`: Resets the working directory and staging area to match the specified commit. Discards all changes.
+
+```bash
+git reset --hard HEAD~1
+```
+
+`--soft`: Moves HEAD to the specified commit but keeps changes staged. Useful for amending commits.
+```bash
+git reset --soft HEAD~1
+```
+
+`--mixed`: (default): Resets the staging area but keeps working directory changes. Unstages changes from the last commit.
+```bash
+git reset --mixed HEAD~1
+```
+
+You can use the same command to back multiple commits.
+
+```bash
+git reset --hard HEAD~3
+git reset --soft HEAD~3
+git reset --mixed HEAD~3
+```
+
+## How to restore files and delete untracked files
+
+Restore all files to the last commit.
+```bash
+git checkout .
+```
+
+Delete untracked files.
+```bash
+git clean -fdx
+```
+
+## How to setup email, name and editor
+
+```bash
+git config --global user.email "your@email.com"
+git config --global user.name "Your Name"
+git config --global core.editor "code --wait"
+```
+
+## How to show, create, renaming and deleting branches
+
+```bash
+git checkout -b branch-name # create and switch to branch
+git branch -m old-branch-name new-branch-name # rename branch
+git branch -d branch-name # delete branch
+git branch -a # list all branches
+```
+## How to rename the last commit
+
+`--amend`: That flag allows you to change the last commit message.
+
+```bash
+git commit --amend -m "new commit message"
+```
