@@ -17,6 +17,8 @@ To learn more about git, check out the following resources:
 - [How to setup email, name and editor](#how-to-setup-email-name-and-editor)
 - [How to show, create, renaming and deleting branches](#how-to-show-create-renaming-and-deleting-branches)
 - [How to rename the last commit](#how-to-rename-the-last-commit)
+- [How to a branch and switch to it](#how-to-a-branch-and-switch-to-it)
+- [How to merge/rebase and delete the branch](#how-to-mergerebase-and-delete-the-branch)
 
 ## How to back the last commit
 
@@ -78,4 +80,22 @@ git branch -a # list all branches
 
 ```bash
 git commit --amend -m "new commit message"
+```
+
+## How to a branch and switch to it
+
+```bash
+git checkout -b branch-name
+```
+
+## How to merge/rebase and delete the current branch
+
+```bash
+git merge branch-name
+git branch -D branch-name
+```
+
+```bash
+git rebase --no-ff branch-name
+git branch -D branch-name
 ```
